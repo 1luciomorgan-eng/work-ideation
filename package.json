@@ -1,0 +1,9 @@
+{
+  "name": "owner-research-desk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node src/server.mjs", "research": "node src/cli.mjs research", "test": "node --test", "export": "node src/cli.mjs export", "publish": "node src/publish.mjs" },
+  "engines": { "node": ">=22.13" },
+  "dependencies": { "browser-use-sdk": "latest", "exa-js": "latest" }
+}

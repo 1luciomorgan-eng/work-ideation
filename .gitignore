@@ -1,0 +1,10 @@
+node_modules/
+.local/
+.herenow/
+.env*
+!.env.example
+data/
+dist/
+docs/*-quickstart.md
+docs/herenow-openapi.json
+*.log
