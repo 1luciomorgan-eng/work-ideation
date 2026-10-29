@@ -42,7 +42,7 @@ export                  Write dist/results.json
 publish                 Build and publish an owner-only here.now dashboard
 ```
 
-`publish` is a `run.ps1` command or `node src/publish.mjs`, not a `cli.mjs` action. It creates the Site once, persists hosting identity before uploads, restricts access to the owner **before** uploading prospect data, uploads only four explicit dashboard files, and confirms finalization. Later publications enforce the saved base version. Interrupted uploads retain pending state. API keys never reach the browser. If access restriction fails, publication stops. No invitations or outreach are sent.
+`publish` is a `run.ps1` command or `node src/publish.mjs`, not a `cli.mjs` action. It creates the Site once using a data-free holding page, persists hosting identity, restricts access to the owner **before** uploading prospect data, uploads only four explicit dashboard files, and confirms finalization. Later publications enforce the saved base version. Interrupted uploads retain pending state. API keys never reach the browser. If access restriction fails, publication stops. No invitations or outreach are sent.
 
 ## Data and evidence
 
@@ -62,6 +62,7 @@ Input rows retain original IDs, priority, supplied owner, task note and supplied
 npm test
 node --check web/app.js
 node --check src/server.mjs
+node test/http-check.mjs # while the local app is running
 ```
 
 Tests cover the meaningful evidence and contact boundaries. The local server listens only on loopback, checks Host and Origin for writes, accepts JSON only, and serves an explicit static-file allowlist. CSV export neutralizes spreadsheet formulas and preserves evidence URLs.
